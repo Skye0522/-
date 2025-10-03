@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>クイズアプリ（compositionAPI）後山</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="app">
+  <div class="quiz-card">
+    <h2>クイズアプリ</h2>
+    <p class="question">問題: {{ question }}</p>
+
+    <input v-model="userAnswer" placeholder="答えを入力してください" class="input-box" />
+    <button @click="checkAnswer" class="btn">解答する</button>
+
+    <p v-if="result" class="result" :class="{ correct: isCorrect, wrong: !isCorrect }">
+      {{ result }}
+    </p>
+    <p v-if="hint" class="hint">{{ hint }}</p>
+  </div>
+</div>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+<script src='https://unpkg.com/vue-router@4/dist/vue-router.global.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
